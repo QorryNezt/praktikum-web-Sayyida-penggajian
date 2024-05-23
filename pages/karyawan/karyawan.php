@@ -15,7 +15,8 @@ include "database/connection.php";
 <div class="row mt-3">
         <div class="col">
                 <?php
-                $selectSQL = "SELECT * FROM karyawan";
+                $selectSQL = "SELECT K.*,B.nama nama_bagian FROM karyawan K 
+                LEFT JOIN bagian B ON K.bagian_id = B.id";
                 $result = mysqli_query($connection, $selectSQL);
                 if (!$result) {
                 ?>
@@ -56,7 +57,7 @@ include "database/connection.php";
                                     <?php echo $row["nama"] ?>
                                 </td>
                                 <td>
-                                    <?php echo $row["bagian_id"] ?>
+                                    <?php echo $row["nama_bagian"] ?>
                                 </td>
                                 <td>
                                     <a href="?page=karyawanubah&id=<?php echo $row["nik"] ?>" class="btn btn-primary">
