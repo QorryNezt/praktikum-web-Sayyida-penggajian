@@ -20,7 +20,7 @@
                 $id = $_POST['id'];
                 $nama = $_POST['nama'];
 
-                $checkSQL = "SELECT * FROM bagian WHERE nama ='nama' AND id!=$id";
+                $checkSQL = "SELECT * FROM bagian WHERE nama ='$nama' AND id!=$id";
                 $result = mysqli_query($connection, $checkSQL);
                 if (mysqli_num_rows($result) > 0) {
                 ?>
