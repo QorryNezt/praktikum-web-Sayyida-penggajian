@@ -17,22 +17,22 @@
             include "database/connection.php";
 
             if(isset($_POST['simpan_button'])) {
-                $nik = $_POST["nik"];
+                $nik = $_POST['nik'];
                 $nama = $_POST['nama'];
                 $tanggal_mulai = $_POST['tanggal_mulai'];
                 $gaji_pokok = $_POST['gaji_pokok'];
                 $status_karyawan = $_POST['status_karyawan'];
                 $bagian_id = $_POST['bagian_id'];
                 
-                $Updatesql = "UPDATE bagian SET 
-                nama='$nama',
-                tanggal_mulai='$tanggal_mulai',
-                gaji_pokok=$gaji_pokok,
-                status_karyawan='$status_karyawan',
-                bagian_id=$bagian_id
-                WHERE nik='$nik'";
-                $result = mysqli_query($connection, $Updatesql);
-                if(!$result){
+                $updateSQL = "UPDATE bagian SET 
+                nama = '$nama',
+                tanggal_mulai = '$tanggal_mulai',
+                gaji_pokok = $gaji_pokok,
+                status_karyawan = '$status_karyawan',
+                bagian_id = $bagian_id
+                WHERE nik ='$nik'";
+            $result = mysqli_query($connection, $updateSQL);
+            if(!$result){
              ?>
                     <div class="alert alert-danger" role="alert">
                         <i class="fa fa-exclamation-circle"></i>
@@ -47,17 +47,17 @@
                     </div>
                 <?php 
                     }
-            }
-            $nik = $_GET['nik'];
-            $selectSQL = "SELECT * FROM karyawan WHERE nik = $nik";
-            $result = mysqli_query($connection, $selectSQL);
-            if (!$result || mysqli_num_rows($result) == 0) {
-                echo '<meta http-equiv="refresh" content="0;url=?page=karyawan">';
+                $nik = $_GET['nik'];
+                $selectSQL = "SELECT * FROM karyawan WHERE nik = $nik";
+                $result = mysqli_query($connection, $selectSQL);
+                if (!$result || mysqli_num_rows($result) == 0) {
+                    echo '<meta http-equiv="refresh" content="0;url=?page=karyawan">';
             }
             $row = mysqli_fetch_assoc($result);
             $tetap_checked = $row["status_karyawan"] == "TETAP" ? "checked" : "";
             $kontrak_checked = $row["status_karyawan"] == "KONTRAK" ? "checked" : "";
             $magang_checked = $row["status_karyawan"] == "MAGANG" ? "checked" : "";
+            }
             ?>
         </div>
     </div>
