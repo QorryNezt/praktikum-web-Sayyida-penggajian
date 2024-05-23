@@ -55,13 +55,13 @@ include "database/connection.php";
                                     <?php echo $row["nama"] ?>
                                 </td>
                                 <td>
-                                <a href="#" class="btn btn-primary">
-                                        <i class="fa fa-edit"></i>
-                                        Ubah
-                                    </a>
+                                    <a href="?page=bagianubah&id=<?php echo $row["id"] ?>" class="btn btn-primary">
+                                            <i class="fa fa-edit"></i>
+                                            Ubah
+                                        </a>
                                     <a href="?page=bagianhapus&id=<?php echo $row["id"] ?>" 
-                                    onclick="javascript: return confirm('Konfirmasi data akan dihapus?')" 
-                                    class="btn btn-danger">
+                                        onclick="javascript: return confirm('Konfirmasi data akan dihapus?')" 
+                                        class="btn btn-danger">
                                         <i class="fa fa-trash"></i>
                                         Hapus
                                     </a>
