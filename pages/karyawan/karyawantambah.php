@@ -32,7 +32,7 @@
         ?>
                 <div class="alert alert-danger" role="alert">
                     <i class="fa fa-exclamation-circle"></i>
-                    Nomor Induk Karyawan (NIK)sudah ada
+                    Nomor Induk Karyawan (NIK) sudah ada
                 </div>
             <?php
             } else {

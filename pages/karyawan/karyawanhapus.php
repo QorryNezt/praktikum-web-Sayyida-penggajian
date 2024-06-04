@@ -17,7 +17,7 @@
         include "database/connection.php";
         $nik = $_GET['nik'];
 
-        $sql = "DELETE FROM bagian WHERE id = $nik";
+        $sql = "DELETE FROM karyawan WHERE nik = $nik";
 
         $result = mysqli_query($connection, $sql);
         if (!$result) {    

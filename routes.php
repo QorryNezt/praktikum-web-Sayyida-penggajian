@@ -33,7 +33,10 @@ switch ($page) {
         break;
     case "karyawanubah";
         include "pages/karyawan/karyawanubah.php";
-        break;                    
+        break;   
+    case "pilihbulantahunpenggajian":
+        include "pages/penggajian/pilihbulantahunpenggajian.php";
+        break;
     default:
     include "pages/404.php";
 }

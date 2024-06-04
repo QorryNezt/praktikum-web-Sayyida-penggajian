@@ -16,7 +16,7 @@
             <?php
             include "database/connection.php";
 
-            if(isset($_POST['simpan_button'])) {
+        if(isset($_POST['simpan_button'])) {
                 $nik = $_POST['nik'];
                 $nama = $_POST['nama'];
                 $tanggal_mulai = $_POST['tanggal_mulai'];
@@ -24,13 +24,14 @@
                 $status_karyawan = $_POST['status_karyawan'];
                 $bagian_id = $_POST['bagian_id'];
                 
-                $updateSQL = "UPDATE bagian SET 
+                $updateSQL = "UPDATE karyawan SET 
                 nama = '$nama',
                 tanggal_mulai = '$tanggal_mulai',
                 gaji_pokok = $gaji_pokok,
                 status_karyawan = '$status_karyawan',
                 bagian_id = $bagian_id
                 WHERE nik ='$nik'";
+                
             $result = mysqli_query($connection, $updateSQL);
             if(!$result){
              ?>
@@ -47,20 +48,23 @@
                     </div>
                 <?php 
                     }
-                $nik = $_GET['nik'];
-                $selectSQL = "SELECT * FROM karyawan WHERE nik = $nik";
-                $result = mysqli_query($connection, $selectSQL);
-                if (!$result || mysqli_num_rows($result) == 0) {
-                    echo '<meta http-equiv="refresh" content="0;url=?page=karyawan">';
-            }
-            $row = mysqli_fetch_assoc($result);
-            $tetap_checked = $row["status_karyawan"] == "TETAP" ? "checked" : "";
-            $kontrak_checked = $row["status_karyawan"] == "KONTRAK" ? "checked" : "";
-            $magang_checked = $row["status_karyawan"] == "MAGANG" ? "checked" : "";
-            }
+              
+           
+        }
+
+        $nik = $_GET['nik'];
+        $selectSQL = "SELECT * FROM karyawan WHERE nik = $nik";
+        $result = mysqli_query($connection, $selectSQL);
+        if (!$result || mysqli_num_rows($result) == 0) {
+            echo '<meta http-equiv="refresh" content="0;url=?page=karyawan">';
+    }   
+
+    $row = mysqli_fetch_assoc($result);
+    $tetap_checked = $row["status_karyawan"] == "TETAP" ? "checked" : "";
+    $kontrak_checked = $row["status_karyawan"] == "KONTRAK" ? "checked" : "";
+    $magang_checked = $row["status_karyawan"] == "MAGANG" ? "checked" : "";
             ?>
         </div>
-    </div>
         <div id="inputan" class="row mb-3">
             <div class="col">
                 <div class="card px-3 py-3">
@@ -148,6 +152,7 @@
             </div>
         </div>
     </div>
+        </div>
     <script>
         if (window.history.replaceState) {
             window.history.replaceState(null, null, window.location.href)
