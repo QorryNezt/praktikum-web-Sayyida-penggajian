@@ -1,14 +1,14 @@
 <?php
-$id = $_GET['id'];
-$bulan = $_GET['bulan'];
-$tahun = $_GET['tahun'];
+    $id = $_GET['id'];
+    $bulan = $_GET['bulan'];
+    $tahun = $_GET['tahun'];
 ?>
 <div id="top" class="row mb-3">
     <div class="col">
         <h3>Hapus Data Penggajian</h3>
     </div>
     <div>
-        <a href="?page=pilihbulantahunpenggajian=<?= $bulan ?>&tahun=<?= $tahun ?>" class="btn btn-primary float-end">
+        <a href="?page=pilihbulantahunpenggajian&bulan=<?= $bulan ?>&tahun=<?= $tahun ?>" class="btn btn-primary float-end">
             <i class="fa fa-arrow-circle-left"></i>
             Kembali
         </a>
@@ -34,7 +34,7 @@ $tahun = $_GET['tahun'];
                 <i class="fa fa-check-circle"></i>
                 Hapus data berhasil
             </div>
-            <meta http-equiv="refresh" content="2;url=?page=pilihbulantahunpenggajian=<?= $bulan ?>&tahun=<?= $tahun ?>">
+            <meta http-equiv="refresh" content="2;url=?page=pilihbulantahunpenggajian&bulan=<?= $bulan ?>&tahun=<?= $tahun ?>"">
         <?php
         }
         ?>
