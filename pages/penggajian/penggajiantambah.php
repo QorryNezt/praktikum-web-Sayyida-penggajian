@@ -19,7 +19,7 @@
                 $karyawan_nik = $_POST['karyawan_nik'];
                 $bulan_select = $_POST['bulan_select'];
                 $tahun = $_POST['tahun'];
-                $gaji_pokok = $_POST['$gaji_pokok'];
+                $gaji_pokok = $_POST['gaji_pokok'];
 
                 $checkSQL = "SELECT * FROM penggajian WHERE karyawan_nik = '$karyawan_nik' AND bulan='$bulan_select' AND tahun=$tahun";
                 $result = mysqli_query($connection, $checkSQL);
@@ -144,10 +144,10 @@
                             <label for="tahun" class="form-label">Tahun</label>
                             <input type="text" class="form-control" id="tahun" name="tahun" required maxlength="4">
                         </div>
-                        <div class="btn btn-success" type="submit" name="simpan_button">
-                            <i class="fas fa-save"></i>
-                            Simpan
-                        </div>
+                        <button class="btn btn-success" type="submit" name="simpan_button">
+                        <i class="fas fa-save"></i>
+                        Simpan
+                        </button>                        
                     </form>
                 </div>
             </div>

@@ -5,7 +5,7 @@
     </div>
     <div class="row mb-3">
         <div class="col">
-            <a href="javascript:history.back()" class="btn btn-primary float-end">
+            <a href="?page=pilihbulantahunpenggajian" class="btn btn-primary float-end">
                 <i class="fa fa-arrow-circle-left"></i>
                 Kembali
             </a>
