@@ -81,7 +81,7 @@
                     <td><?php echo $row["tahun"] ?></td>
                     <td class="text-end"><?php echo number_format($row["gaji_bayar"]) ?></td>
                     <td>
-                       <a href="?page=penggajianhapus&id=<?= $row["id"] ?>&bulan<?= $bulan ?>&tahun=<?= $tahun ?>" onclick="javascript: return confirm('Konfirmasi data akan dihapus?');" class="btn btn-danger">
+                       <a href="?page=penggajianhapus&id=<?= $row["id"] ?>&bulan=<?= $bulan ?>&tahun=<?= $tahun ?>" onclick="javascript: return confirm('Konfirmasi data akan dihapus?');" class="btn btn-danger">
                         <i class="fa fa-trash"></i>
                         Hapus
                         </a>
